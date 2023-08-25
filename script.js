@@ -61,13 +61,12 @@ document.getElementById('formulario').addEventListener('submit', (event) => {
             password:contrasenaEntrada.value
         })
         .then((docRef)=>{
-            console.log("Documents written with ID: ", docRef.id);
+            alert('El formulario se ha enviado con éxito', docRef.id);
+            document.getElementById('formulario').reset();
         })
         .catch((error)=> {
-            console.error("Error adding document: ",error);
+            alert(error);
         });
 
-        alert('El formulario se ha enviado con éxito');
-        document.getElementById('formulario').reset();
     }
 })
